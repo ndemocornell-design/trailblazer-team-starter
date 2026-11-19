@@ -132,7 +132,7 @@ footer {
   gap: 12px;
   padding: 0 15px;
   border: 1px solid #615e54;
-  border-radius: 5px;
+  border-radius:18px;
   background: var(--white);
   color: var(--ink);
 }
