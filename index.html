@@ -3,30 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Our product</title>
+  <meta name="theme-color" content="#171512">
+  <title>PLOTTWEAR — Find your next fit</title>
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to the main content</a>
 
-  <header>
-    <h1>Our product</h1>
-    <p class="note">Change this line on Day 3: who your product helps, and what it does for them.</p>
+  <header class="site-header">
+    <a class="wordmark" href="#" aria-label="PLOTTWEAR home">PLOTT<span>WEAR</span></a>
+    <p class="header-note">BUILT FOR YOUR EVERYDAY
+      WITH A FOCUS ON COMFORT, STYLE, AND FUNCTIONALITY.
+    </p>
   </header>
 
   <main id="main">
-    <section class="card" aria-labelledby="items-title">
-      <h2 id="items-title">Items</h2>
-      <p class="note">Sample items, made up for this course. Replace them with your own data.</p>
-      <p id="items-status" class="status" role="status" aria-live="polite"></p>
-      <ul id="items-list" class="list"></ul>
+    <section class="finder" aria-labelledby="finder-title">
+      <div class="finder-copy">
+        <p class="eyebrow">THE GOOD STUFF, RIGHT HERE</p>
+        <h1 id="finder-title">Find your<br><span>next fit.</span></h1>
+        <p class="intro">TIRED OF GOING TO MALLS AND NOT GETTING YOUR FIT? WE GOT YOU. JUST SEARCH FOR WHAT YOU NEED. </p>
+      </div>
+
+      <div class="search-panel">
+        <label class="search-label" for="product-search">WHAT ARE YOU LOOKING FOR?</label>
+        <div class="search-box">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="product-search" type="search" placeholder="Try “hoodie” or “cargo”" autocomplete="off">
+          <kbd aria-hidden="true">Ctrl K</kbd>
+        </div>
+        <div class="filter-row" role="group" aria-label="Filter products by category">
+          <button class="filter-button is-active" type="button" data-category="all" aria-pressed="true">All pieces</button>
+          <button class="filter-button" type="button" data-category="tops" aria-pressed="false">Tops</button>
+          <button class="filter-button" type="button" data-category="bottoms" aria-pressed="false">Bottoms</button>
+          <button class="filter-button" type="button" data-category="accessories" aria-pressed="false">Accessories</button>
+        </div>
+      </div>
+      <span class="decor decor-one" aria-hidden="true"></span>
+      <span class="decor decor-two" aria-hidden="true"></span>
+    </section>
+
+    <section class="collection" id="collection" aria-labelledby="collection-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CURATED FOR YOU</p>
+          <h2 id="collection-title">The collection<span class="heading-dot">.</span></h2>
+        </div>
+        <p id="results-count" class="results-count" role="status" aria-live="polite">Showing 4 pieces</p>
+      </div>
+
+      <div class="products">
+        <article class="product" data-category="tops" data-product="oversized-tee" data-price="1500">
+          <div class="product-image"><img src="./pbc6.png" alt="Oversized T-Shirt"></div>
+          <div class="product-info">
+            <p class="product-category">TOPS <span>01</span></p>
+            <h3>Oversized T-Shirt</h3>
+            <p class="product-bottom"><span>KSh 1,500</span><button class="add-button" type="button" aria-label="Add Oversized T-Shirt to bag">Add to bag</button></p>
+          </div>
+        </article>
+
+        <article class="product" data-category="tops" data-product="classic-hoodie" data-price="2500">
+          <div class="product-image"><img src="./hoodie.webp" alt="Classic Hoodie"></div>
+          <div class="product-info">
+            <p class="product-category">TOPS <span>02</span></p>
+            <h3>Classic Hoodie</h3>
+            <p class="product-bottom"><span>KSh 2,500</span><button class="add-button" type="button" aria-label="Add Classic Hoodie to bag">Add to bag</button></p>
+          </div>
+        </article>
+
+        <article class="product" data-category="bottoms" data-product="cargo-pants" data-price="2000">
+          <div class="product-image"><img src="./cargo.jpg" alt="Cargo Pants"></div>
+          <div class="product-info">
+            <p class="product-category">BOTTOMS <span>03</span></p>
+            <h3>Cargo Pants</h3>
+            <p class="product-bottom"><span>KSh 2,000</span><button class="add-button" type="button" aria-label="Add Cargo Pants to bag">Add to bag</button></p>
+          </div>
+        </article>
+
+        <article class="product" data-category="accessories" data-product="classic-cap" data-price="800">
+          <div class="product-image"><img src="./cap.jpg" alt="Classic Cap"></div>
+          <div class="product-info">
+            <p class="product-category">ACCESSORIES <span>04</span></p>
+            <h3>Classic Cap</h3>
+            <p class="product-bottom"><span>KSh 800</span><button class="add-button" type="button" aria-label="Add Classic Cap to bag">Add to bag</button></p>
+          </div>
+        </article>
+      </div>
+
+      <p id="empty-results" class="empty-results" hidden>No pieces found. Try another search or category.</p>
+    </section>
+
+    <section class="checkout-section" id="checkout" aria-labelledby="checkout-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR PICKS</p>
+          <h2 id="checkout-title">Your bag<span class="heading-dot">.</span></h2>
+        </div>
+        <p id="bag-count" class="results-count" role="status" aria-live="polite">Your bag is empty</p>
+      </div>
+
+      <div class="checkout-card">
+        <p id="bag-empty" class="bag-empty">Add a piece from the collection to get started.</p>
+        <ul id="bag-items" class="bag-items" aria-label="Items in your bag"></ul>
+        <p id="bag-total" class="bag-total" hidden></p>
+        <p class="checkout-note">Payment processing is not available here. Do not enter payment details; your contact details stay in this browser and are not submitted or saved.</p>
+        <button id="checkout-start" class="checkout-button" type="button" disabled>Continue to checkout</button>
+
+        <form id="checkout-form" class="checkout-form" hidden>
+          <h3>Delivery details</h3>
+          <div class="form-grid">
+            <label for="customer-name">Full name
+              <input id="customer-name" name="name" type="text" autocomplete="name" required>
+            </label>
+            <label for="customer-email">Email address
+              <input id="customer-email" name="email" type="email" autocomplete="email" required>
+            </label>
+            <label class="address-field" for="delivery-address">Delivery address
+              <input id="delivery-address" name="address" type="text" autocomplete="street-address" required>
+            </label>
+          </div>
+          <button class="checkout-button" type="submit">Review details</button>
+        </form>
+        <p id="checkout-status" class="checkout-status" role="status" aria-live="polite"></p>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>Made by our team for Trailblazer: AI Product Studio.</p>
-    <p>Practice pages: <a href="practice/index.html">Town forecast card</a></p>
+    <a class="wordmark footer-mark" href="#" aria-label="PLOTTWEAR home">PLOTT<span>WEAR</span></a>
+    <p>Made for your everyday. Made by our team for you.</p>
   </footer>
 
   <script type="module" src="app.js"></script>
